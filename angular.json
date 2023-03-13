@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "imoney-wallet"
+    }
+  },
+  "defaultProject": "imoney-wallet",
+  "cli": {
+    "analytics": "bc0b33ee-a389-47ea-8248-ab31f1f6d9a9"
+  }
 }

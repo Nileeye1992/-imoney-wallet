@@ -1,0 +1,56 @@
+<div class="app">
+  <section class="section">
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col-12 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-6 offset-lg-3 col-xl-4 offset-xl-4">
+          <div class="login-brand">
+            <img src="assets/dist/img/stisla-fill.svg" alt="logo" width="100" class="shadow-light rounded-circle">
+          </div>
+
+          <div class="card card-primary">
+            <div class="card-header">
+              <h4>Login</h4>
+            </div>
+
+            <div class="card-body">
+              <form class="needs-validation" novalidate="">
+                <div class="form-group">
+                  <label for="username">Username</label>
+                  <input id="username" type="text" class="form-control" name="username" required autofocus
+                    [(ngModel)]="username" [ngModelOptions]="{standalone:true}">
+                  <div class="invalid-feedback">
+                    กรุณาใส่ Username
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <div class="d-block">
+                    <label for="password" class="control-label">Password</label>
+                    <div class="float-right">
+                      <a [routerLink]="['/forget-password']" class="text-small">
+                        Forgot Password?
+                      </a>
+                    </div>
+                  </div>
+
+                  <input id="password" type="password" class="form-control" name="password" required
+                    [(ngModel)]="password" [ngModelOptions]="{standalone:true}">
+                  <div class="invalid-feedback">
+                    กรุณาใส่ Password
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <button type="submit" class="btn btn-primary btn-lg btn-block" (click)="login()">
+                    Login
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
