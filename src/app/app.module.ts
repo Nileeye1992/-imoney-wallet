@@ -5,7 +5,6 @@ import { AuthModule } from './auth/auth.module';
 import { SharedModule } from './shared/shared.module';
 import { MainDisplayComponent } from './display/main-display/main-display.component';
 import { DisplayModule } from './display/display.module';
-
 @NgModule({
   declarations: [
     AppComponent,
