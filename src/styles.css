@@ -1,5 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-.text-center{
+.text-center {
     text-align: center;
 }
 
@@ -10,4 +10,33 @@
     width: 100%;
     color: lightgray;
     text-align: center;
- }
+}
+
+.modal-dialog{
+ margin: auto !important;
+ margin-top: 20px;
+}
+
+.modal-header {
+    display: flow-root !important;
+}
+
+.modal-header .close span {
+    font-size: 40px;
+}
+
+.modalw60 .modal-dialog {
+    width: 60%;
+}
+
+@media screen and (min-device-width:390px) and (max-device-width:991px) {
+
+    .modalw30 .modal-dialog,
+    .modalw40 .modal-dialog,
+    .modalw50 .modal-dialog,
+    .modalw60 .modal-dialog,
+    .modalw70 .modal-dialog,
+    .modalw80 .modal-dialog {
+        width: 90%;
+    }
+}

@@ -3,7 +3,7 @@
     <div class="container mt-4">
       <div class="row">
         <div class="col-12 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-6 offset-lg-3 col-xl-4 offset-xl-4">
-
+          <span style="color: darkgray;">User : {{userName}}</span>
           <div class="card-header text-center">
             <h4>฿&nbsp;{{currency.format(balance)}}</h4>
             <span style="color: darkgray;">Balance</span>
@@ -11,9 +11,9 @@
 
           <div class="card-body">
             <div class="text-center buttons money">
-              <a href="#" class="btn btn-icon icon-left"><i class="fa fa-money"></i> Top up</a>
-              <a href="#" class="btn btn-icon icon-left"><i class="fa fa-money"></i> Transfer</a>
-              <a href="#" class="btn btn-icon icon-left"><i class="fa fa-money"></i> Widthdraw</a>
+              <a href="#" class="btn btn-icon"><i class="fa fa-money"></i> Top up</a>
+              <a href="#" class="btn btn-icon"><i class="fa fa-money"></i> Transfer</a>
+              <a href="#" class="btn btn-icon"><i class="fa fa-money"></i> Widthdraw</a>
             </div>
           </div>
         </div>
@@ -28,10 +28,10 @@
               <span><b>group fund</b></span>
             </div>
 
-            <div class="card-body" style="height: 800px; overflow: auto;">
+            <div class="card-body">
               <div class="row">
                 <div class="col text-center">
-                  <div class="browser browser-chrome"></div>
+                  <div class="browser browser-chrome" (click)="qrOpen()"></div>
                   <div class="mt-2">Chrome</div>
                 </div>
 
@@ -53,8 +53,6 @@
       </div>
     </div>
   </section>
-</div>
 
-<div class="footer">
-  <p>Footer</p>
+  <app-footer></app-footer>
 </div>

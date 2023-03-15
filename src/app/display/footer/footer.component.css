@@ -1,0 +1,37 @@
+.footer {
+    background-color: white !important;
+}
+
+.buttons a,
+.buttons a:hover {
+    font-weight: bold !important;
+    width: 20%;
+    height: 35px !important;
+    background-color: inherit;
+}
+
+/* a:active,
+a.active,
+.active i {
+    color: #45B39D !important;
+} */
+
+.active{
+    color: #45B39D !important;
+}
+
+.buttons .btn {
+    margin: 0;
+}
+
+.btn-teal {
+    background-color: #20c997;
+}
+
+i {
+    font-size: 20px;
+}
+
+button i {
+    vertical-align: inherit !important;
+}
