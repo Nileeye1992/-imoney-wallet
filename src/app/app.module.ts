@@ -6,6 +6,7 @@ import { SharedModule } from './shared/shared.module';
 import { DisplayModule } from './display/display.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ServiceLocator } from './services/service-locator';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -15,7 +16,8 @@ import { ServiceLocator } from './services/service-locator';
     AuthModule,
     SharedModule,
     DisplayModule,
-    NgbModule
+    NgbModule,
+    HttpClientModule 
   ],
   providers: [],
   bootstrap: [AppComponent]
