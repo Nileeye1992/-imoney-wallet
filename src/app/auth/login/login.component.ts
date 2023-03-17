@@ -23,8 +23,9 @@ export class LoginComponent implements OnInit {
 
   async login() {
     try {
-      const passWithMD5 = Md5.hashStr(this.password);
-      const log = await this.loginService.userlogin(this.username, passWithMD5).toPromise();
+      // const passWithMD5 = Md5.hashStr(this.password);
+      const USN = "65gg01" + this.username;
+      const log = await this.loginService.userlogin(USN, this.password).toPromise();
       if (log > 0) {
         await localStorage.setItem('username65gg01', this.username);
         await this.router.navigate(["/display/main"]);
@@ -32,7 +33,7 @@ export class LoginComponent implements OnInit {
         throw Error('login invalid');
       }
     } catch (e) {
-      ErrorMessage.alert(e);
+      ErrorMessage.alert(e);      
     }
   }
 }

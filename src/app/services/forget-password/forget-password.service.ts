@@ -14,7 +14,8 @@ export class ForgetPasswordService {
   };
 
   url88 = 'https://topup-premier888.askmebet.io/v0.1';
-  baseUrl: string = "http://localhost/imoney-wallet";
+  
+  url: string = environment.apiUrl;
   constructor(protected http: HttpClient) { }
 
   public resetPassword(userName: string, signature: PasswordSignature): Observable<any> {
@@ -25,6 +26,6 @@ export class ForgetPasswordService {
     const params = new HttpParams()
       .set('username', username)
       .set('password', password);
-    return this.http.post<number>(this.baseUrl + '/resetPassword.php', params);
+    return this.http.post<number>(this.url + '/resetPasswordLocal.php', params);
   }
 }

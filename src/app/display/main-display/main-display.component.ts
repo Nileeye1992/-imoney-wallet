@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
 import { UserData } from 'src/app/services/login/user-data';
 import { LoginService } from 'src/app/services/login/login.service';
 import { ErrorMessage } from 'src/app/shared/utils/error-message';
+import { CreditService } from 'src/app/services/crerdit/credit.service';
 
 @Component({
   selector: 'app-main-display',
@@ -23,6 +24,7 @@ export class MainDisplayComponent implements OnInit {
   constructor(
     private router: Router,
     private loginService: LoginService,
+    private creditService: CreditService,
   ) { }
 
   ngOnInit(): void {
@@ -36,7 +38,8 @@ export class MainDisplayComponent implements OnInit {
 
   async loadUser(u: string) {
     try {
-      this.user = await this.loginService.getUserByUserName(u).toPromise();
+      const USN = "65gg01" + u;
+      this.user = await this.loginService.getUserByUserName(USN).toPromise();
       if (!this.user) {
         throw new Error("User not found");
       }
@@ -71,5 +74,11 @@ export class MainDisplayComponent implements OnInit {
     localStorage.setItem('username65gg01', null);
     await this.loginService.userlogout(this.user.username).toPromise();
     this.router.navigate(["/"]);
+  }
+
+  async test() {
+    const t = await this.creditService.getCreditByUserName(this.user.username).toPromise();
+    console.log(t);
+
   }
 }

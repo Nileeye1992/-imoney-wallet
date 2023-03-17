@@ -2,8 +2,8 @@
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: PUT, GET, POST");
 header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
-
 include 'database.php';
+
 if ($_SERVER["REQUEST_METHOD"] == "POST"){
     $data = file_get_contents("php://input");
     $password = null;
@@ -11,26 +11,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
     $name =  $_POST['username'];
     $password =  $_POST['password'];
     if($name &&  $password){
-        $query = "SELECT * FROM wallet.i_money where username = '$name' and password = '$password'";
+        $query = "UPDATE wallet.i_money SET password = '$password' WHERE username = '$name'";$stmt = $con->prepare($query);
         $stmt = $con->prepare($query);
         $stmt->execute();
-        $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        $findChangeQuery = "SELECT * FROM wallet.i_money where username = '$name' and password = '$password'";
+        $stmtChange = $con->prepare($findChangeQuery);
+        $stmtChange->execute();
+        $results = $stmtChange->fetchAll(PDO::FETCH_ASSOC);
         if($results){
-            $CurrrDatte = date("Y-m-d H:m:s");
-            $insertLoginDateQuery = "UPDATE wallet.i_money SET login_datetime = '$CurrrDatte' WHERE username = '$name'";
-            $stmtLogin = $con->prepare($insertLoginDateQuery);
-            $stmtLogin->execute();
             echo 1;
         }else{
-            echo 0;           
+            echo 0;
         }
     }else{
-            $data = [
-                'status' => 405,
-                'message' => $requestMethod. 'Data incomplete',
-            ];
-            header("HTTP/1.0 405 Method Not Allowed");
-            echo json_encode($data);
+        $data = [
+            'status' => 405,
+            'message' => $requestMethod. 'Data incomplete',
+        ];
+        header("HTTP/1.0 405 Method Not Allowed");
+        echo json_encode($data);
     }
 }else{
     $data = [
@@ -40,5 +40,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
     header("HTTP/1.0 405 Method Not Allowed");
     echo json_encode($data);
 }
-
 ?>

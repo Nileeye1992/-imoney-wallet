@@ -14,21 +14,25 @@ export class LoginService {
     })
   };
 
-  baseUrl: string = "http://localhost/imoney-wallet";
+  url: string = environment.apiUrl;
   constructor(protected http: HttpClient) { }
 
   public userlogin(username: string, password: string): Observable<number> {
     const params = new HttpParams()
       .set('username', username)
       .set('password', password);
-    return this.http.post<number>(this.baseUrl + '/login.php', params);
+    return this.http.post<number>(this.url + '/login.php', params);
   }
 
   public getUserByUserName(username: string): Observable<UserData> {
-    return this.http.get<UserData>(this.baseUrl + '/getUser.php?username='+ username);
+    return this.http.get<UserData>(this.url + '/getUser.php?username=' + username);
   }
 
   public userlogout(username: string): Observable<void> {
-    return this.http.get<void>(this.baseUrl + '/logout.php?username='+ username);
+    return this.http.get<void>(this.url + '/logout.php?username=' + username);
+  }
+
+  findUser(): Observable<any> {
+    return this.http.get<any>(this.url + '/find_all_user.php');
   }
 }
