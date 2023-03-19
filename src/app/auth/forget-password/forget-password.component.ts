@@ -34,21 +34,24 @@ export class ForgetPasswordComponent implements OnInit {
       let signature = this.newPassword + ":65gg01";
 
       const signatureHash = Md5.hashStr(signature);
+      let user = "65gg01" + this.username;
       let sign = {
+        username: user,
         password: this.newPassword,
         signature: signatureHash
       } as PasswordSignature;
-      let user = "65gg01" + this.username;
-      // const change = await this.forgetPasswordService.resetPassword(this.username, sign).toPromise();
+
+      // const change = await this.forgetPasswordService.resetPassword(sign).toPromise();
+      const change = await this.forgetPasswordService.resetPassword(user, this.newPassword , signatureHash).toPromise();
       // if (change && change.code == 0) {
-      //เปลี่ยนรหัสสำเร็จ ทีนี้ต้องมาเปลี่ยนในฐานเรา
-      const reseted = await this.forgetPasswordService.resetPasswordLocal(user, this.newPassword).toPromise();
-      //Md5.hashStr(this.newPassword)
-      if (reseted > 0) {
-        await MessageBox.success('change password success');
-        await this.router.navigate(["/"]);
+        //เปลี่ยนรหัสสำเร็จ ทีนี้ต้องมาเปลี่ยนในฐานเรา
+        // const reseted = await this.forgetPasswordService.resetPasswordLocal(user, this.newPassword).toPromise();
+        // //Md5.hashStr(this.newPassword)
+        // if (reseted > 0) {
+        //   await MessageBox.success('change password success');
+        //   await this.router.navigate(["/"]);
         // }
-      }
+      // }
 
       console.log("user : ", user);
       console.log("signature : ", this.newPassword, signature, signatureHash);

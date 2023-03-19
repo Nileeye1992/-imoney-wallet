@@ -16,6 +16,7 @@ import { CreditService } from 'src/app/services/crerdit/credit.service';
 })
 export class MainDisplayComponent implements OnInit {
   user: UserData = {} as UserData;
+  credit: number = 0;
   currency = new Intl.NumberFormat('th-TH', {
     minimumFractionDigits: 2
   });
@@ -40,6 +41,11 @@ export class MainDisplayComponent implements OnInit {
     try {
       const USN = "65gg01" + u;
       this.user = await this.loginService.getUserByUserName(USN).toPromise();
+      const c = await this.creditService.getCreditByUserName(USN).toPromise();
+      if (c?.result) {
+        this.credit = c.result.credit;
+      }
+
       if (!this.user) {
         throw new Error("User not found");
       }
