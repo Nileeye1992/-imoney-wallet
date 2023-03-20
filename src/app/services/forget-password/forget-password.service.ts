@@ -25,7 +25,7 @@ export class ForgetPasswordService {
       .set('username', username)
       .set('signature', signature)
       .set('password', password);
-    return this.http.put<any>(this.url + '/resetPassword.php', params);
+    return this.http.post<any>(this.url + '/resetPassword.php', params);
   }
 
   public resetPasswordLocal(username: string, password: string): Observable<number> {

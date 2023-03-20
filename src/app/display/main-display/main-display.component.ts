@@ -81,10 +81,4 @@ export class MainDisplayComponent implements OnInit {
     await this.loginService.userlogout(this.user.username).toPromise();
     this.router.navigate(["/"]);
   }
-
-  async test() {
-    const t = await this.creditService.getCreditByUserName(this.user.username).toPromise();
-    console.log(t);
-
-  }
 }
