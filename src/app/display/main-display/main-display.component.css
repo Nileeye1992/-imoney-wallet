@@ -1,10 +1,11 @@
 .card-header {
     background-color: unset !important;
-    border-bottom: 0px
+    border-bottom: 0px;
+    padding: 10px;
 }
 
 .card-header h4 {
-    font-size: 20px !important;
+    font-size: 30px !important;
     color: #2E86C1 !important;
 }
 
@@ -16,14 +17,13 @@
 .buttons a:hover {
     font-weight: bold !important;
     color: #2E86C1 !important;
-    /* #45B39D  */
     padding: 15px !important;
     background-color: white !important;
     width: 30%;
 }
 
 .card {
-    border-radius: 25px !important;
+    border-radius: 20px !important;
 }
 
 .card-body {
@@ -36,4 +36,12 @@
 
 .buttons .btn {
     margin: 0 5px !important;
+}
+
+span{
+    color: #636363;    
+}
+
+.user-body{
+    padding: 10px 5px !important;
 }

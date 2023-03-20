@@ -1,55 +1,59 @@
 <div class="app">
   <section class="section">
-    <div class="container mt-4">
+    <div class="container" style="margin-top: 2rem;">
       <div class="row">
         <div class="col-12 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-6 offset-lg-3 col-xl-4 offset-xl-4">
-          <span style="color: darkgray;">User : {{user.username}}</span>
-          <span class="text-right" style="color: darkgray; cursor: pointer;float: right;" (click)="logOut()">Log
-            out</span>
-          <div class="card-header text-center">
-            <h4>฿&nbsp;{{currency.format(credit)}}</h4>
-            <span style="color: darkgray;">Balance</span>
+          <div class="card card-light" style="margin-bottom: 0px;">
+            <div class="user-body">
+              <span style="padding-top: 3px;vertical-align: -webkit-baseline-middle;">User : {{user.username}}</span>
+              <button type="button" class="btn btn-sm btn-danger pull-right" (click)="logOut()">Log out</button>
+            </div>
+
+            <div class="card-header text-center">
+              <h4>฿&nbsp;{{currency.format(credit)}}</h4>
+              <span style="vertical-align: -webkit-baseline-middle;">Balance</span>
+            </div>
           </div>
 
 
+          <div class="card-body">
+            <div class="text-center buttons money">
+              <a href="#" class="btn btn-success btn-icon"><i class="fa fa-money"></i> Top up</a>
+              <a href="#" class="btn  btn-success btn-icon"><i class="fa fa-money"></i> Transfer</a>
+              <a href="#" class="btn btn-success  btn-icon"><i class="fa fa-money"></i> Widthdraw</a>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="container mt-1">
-      <div class="row">
-        <div class="col-12 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-6 offset-lg-3 col-xl-4 offset-xl-4">
-          <div class="card card-light">
-            <div class="card-body">
-              <div class="text-center buttons money">
-                <a href="#" class="btn btn-success btn-icon"><i class="fa fa-money"></i> Top up</a>
-                <a href="#" class="btn  btn-success btn-icon"><i class="fa fa-money"></i> Transfer</a>
-                <a href="#" class="btn btn-success  btn-icon"><i class="fa fa-money"></i> Widthdraw</a>
-              </div>
-            </div>
-
-            <div class="card-header" style="padding-top: 10px;">
-              <span><b>group fund</b></span>
-            </div>
-
-            <div class="card-body">
-              <div class="row">
-                <div class="col text-center">
-                  <div class="browser browser-chrome" (click)="qrOpen()"></div>
-                  <div class="mt-2">Chrome</div>
-                </div>
-
-                <div class="col text-center">
-                  <div class="browser browser-chrome"></div>
-                  <div class="mt-2">Chrome</div>
-                </div>
-
-                <div class="col text-center">
-                  <div class="browser browser-chrome"></div>
-                  <div class="mt-2">Chrome</div>
-                </div>
+      <div class="container mt-1">
+        <div class="row">
+          <div class="col-12 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-6 offset-lg-3 col-xl-4 offset-xl-4">
+            <div class="card card-light">
+              <div class="card-header" style="padding-top: 10px; border-bottom: 1px solid gray;">
+                <span><b>group fund</b></span>
               </div>
 
+              <div class="card-body">
+                <div class="row">
+                  <div class="col text-center">
+                    <div class="browser browser-chrome" (click)="qrOpen()"></div>
+                    <div class="mt-2">Chrome</div>
+                  </div>
+
+                  <div class="col text-center">
+                    <div class="browser browser-chrome"></div>
+                    <div class="mt-2">Chrome</div>
+                  </div>
+
+                  <div class="col text-center">
+                    <div class="browser browser-chrome"></div>
+                    <div class="mt-2">Chrome</div>
+                  </div>
+                </div>
+
+
+              </div>
 
             </div>
           </div>

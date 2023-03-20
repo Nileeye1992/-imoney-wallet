@@ -1,4 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+body{
+    background-color: #edf3fa;
+}
+
 .text-center {
     text-align: center;
 }
@@ -43,4 +47,8 @@
     .modalw80 .modal-dialog {
         width: 90%;
     }
+}
+
+.pull-right{
+    float: right;
 }
