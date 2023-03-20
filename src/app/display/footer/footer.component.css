@@ -15,7 +15,7 @@ a.active,
     color: #45B39D !important;
 } */
 
-.active{
+.active {
     color: #45B39D !important;
 }
 
@@ -33,4 +33,8 @@ i {
 
 button i {
     vertical-align: inherit !important;
+}
+
+a:hover i .fa-qrcode {
+    color: black !important;
 }
