@@ -1,5 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-body{
+body {
     background-color: #edf3fa;
 }
 
@@ -7,7 +7,7 @@ body{
     text-align: center;
 }
 
-.text-right{
+.text-right {
     text-align: right;
 }
 
@@ -20,9 +20,9 @@ body{
     text-align: center;
 }
 
-.modal-dialog{
- margin: auto !important;
- margin-top: 20px;
+.modal-dialog {
+    margin: auto !important;
+    margin-top: 20px;
 }
 
 .modal-header {
@@ -49,6 +49,7 @@ body{
     }
 }
 
-.pull-right{
+
+.pull-right {
     float: right;
 }

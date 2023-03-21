@@ -10,7 +10,7 @@
 }
 
 .buttons.money .btn {
-    display: inline-grid !important;
+    display: inline-grid;
 }
 
 .buttons a,
@@ -38,10 +38,62 @@
     margin: 0 5px !important;
 }
 
-span{
-    color: #636363;    
+span {
+    color: #636363;
 }
 
-.user-body{
+.user-body {
     padding: 10px 5px !important;
+}
+
+.list-item {
+    display: flex !important;
+}
+
+@media screen and (min-device-width:576px) {
+    /* 767px */
+
+    .container,
+    .col-12,
+    .col-sm-8,
+    .offset-sm-2,
+    .col-md-6,
+    .offset-md-3,
+    .col-lg-6,
+    .offset-lg-3,
+    .col-xl-4,
+    .offset-xl-4 {
+        margin: 2rem 0px 0px 0px;
+        max-width: inherit !important;
+    }
+
+    .row {
+        display: contents;
+    }
+
+    .fund>.col-12 {
+        padding: 0px;
+        margin: 0px;
+    }
+
+    .buttons.money a{
+        font-size: 18px;
+    }
+
+    span{
+        font-size: 16px;
+    }
+}
+
+@media screen and (min-device-width:280px) and (max-device-width:360px) {
+    .fund>.col-12 {
+        padding: 0px;
+        margin: 0px;
+    }
+
+    .buttons.money .btn{
+        display: block;
+        width: revert;
+        /* display: inline !important; */
+    }
 }

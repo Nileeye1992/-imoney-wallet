@@ -1,40 +1,91 @@
 .footer {
     background-color: white !important;
+    height: 70px !important;
+    box-shadow: 0 2px 6px #81d694;
 }
 
 .buttons a,
 .buttons a:hover {
     font-weight: bold !important;
     width: 20%;
-    height: 35px !important;
+    height: 70px !important;
+    font-size: 30px !important;
+    color: #636363 !important;
 }
 
-/* a:active,
-a.active,
-.active i {
-    color: #45B39D !important;
-} */
+.buttons a:hover i:hover {
+    color: #20c997;
+}
 
-.active {
-    color: #45B39D !important;
+.active i,
+a.active i,
+a:active i,
+a:hover i {
+    color: #20c997 !important;
 }
 
 .buttons .btn {
     margin: 0;
+    padding-top: 15px;
 }
 
 .btn-teal {
     background-color: #20c997;
 }
 
-i {
-    font-size: 20px;
-}
-
 button i {
     vertical-align: inherit !important;
 }
 
-a:hover i .fa-qrcode {
-    color: black !important;
+a:hover,
+.btn:hover a:hover i:hover {
+    color: #636363 !important;
+}
+
+.qr {
+    border-radius: 9999px !important;
+    margin-top: -2.75rem !important;
+    width: 4.5rem !important;
+}
+
+@media screen and (min-device-width:360px) and (max-device-width:767px) {
+
+    .buttons a,
+    .buttons a:hover {
+        font-size: 25px !important;
+    }
+
+    .buttons .btn {
+        padding-top: 12px;
+    }
+}
+
+@media screen and (min-device-width:280px) and (max-device-width:360px) {
+
+    .buttons a,
+    .buttons a:hover {
+        font-size: 15px !important;
+    }
+
+    .qr {
+        border-radius: 9999px !important;
+        margin-top: -1rem !important;
+        width: 2rem !important;
+        padding: 0px !important;
+    }
+
+    .qr>i,
+    .buttons .btn.qr {
+        padding-top: 4px !important;
+    }
+
+    .buttons .btn {
+        height: 2rem !important;
+        padding-top: 7px !important;
+    }
+
+    .footer {
+        height: 40px !important;
+    }
+
 }
